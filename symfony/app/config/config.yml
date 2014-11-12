@@ -78,7 +78,6 @@ swiftmailer:
     spool:          { type: memory }
     port:           %mailer_port%
     encryption:     %mailer_encryption%
-    sender_address: %mailer_sender_address%
 
 sensio_framework_extra:
     view: { annotations: false }
