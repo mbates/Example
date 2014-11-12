@@ -1,5 +1,12 @@
 ## Example Symfony2 / AngularJS Apps
 
+### Install Symfony
+Globally install composer https://getcomposer.org/doc/00-intro.md then run this from the symfony directory
+
+```
+composer install
+```
+
 ### Symfony Permissions
 
 ```
