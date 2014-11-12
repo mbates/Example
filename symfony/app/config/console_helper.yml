@@ -1,0 +1,37 @@
+cache:
+    php app/console cache:clear
+    php app/console cache:clear --env=prod
+    php app/console cache:clear --env=dev
+bundle:
+    php app/console generate:bundle
+doctrine:
+    database:
+        php app/console doctrine:database:drop --force
+        php app/console doctrine:database:create
+    schema:
+        php app/console doctrine:schema:create
+        php app/console doctrine:schema:create --em=default
+        php app/console doctrine:schema:update
+        php app/console doctrine:schema:update --force
+    fixture:
+        php app/console doctrine:fixtures:load
+        php app/console doctrine:fixtures:load --fixtures=src/Mbates/Bundle/FixtureBundle/DataFixtures/ORM
+    migrations:
+        php app/console doctrine:migrations:diff
+        php app/console doctrine:migrations:diff --em=default
+        php app/console doctrine:migrations:migrate
+        php app/console doctrine:migrations:migrate --em=default
+        php app/console doctrine:migrations:version
+        php app/console doctrine:migrations:status
+    build:
+        php app/console doctrine:build --all
+    entities:
+        php app/console doctrine:generate:entities Mbates/Bundle
+        php app/console doctrine:generate:entities Mbates/Bundle/GamesBundle
+        php app/console doctrine:generate:entities Mbates/Bundle/UserBundle/Entity/User
+route:
+    php app/console route:debug | grep api
+assetic:
+    php app/console assets:install --symlink
+    php app/console assets:install web --symlink
+    php app/console assetic:dump --env=prod --no-debug

@@ -1,0 +1,38 @@
+<nav class="nav-bar">
+    <div class="table">
+        <div class="label">
+            <a ng-click="$back()" class="back"><span class="glyphicon glyphicon-chevron-left"></span> Back</a>
+        </div>
+        <div>
+            <h1 class="st-title">Games</h1>
+        </div>
+        <div class="label">
+            <a href="#game/add"><span class="glyphicon glyphicon-plus"></span> Add Game</a>
+        </div>
+    </div>
+</nav>
+
+<div x-container class="row">
+    
+    <div ng-repeat="game in games">
+
+        <header class="table-header">
+
+            <h2 class="left">{{game.title}}</h2>
+
+        </header>
+
+        <ul class="table">
+
+            <li class="game-details">
+                <a ng-href="#game/{{game.id}}/details">
+                    {{game.notes}}
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </li>
+
+        </ul>
+        
+    </div>
+
+</div>

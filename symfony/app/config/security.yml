@@ -1,0 +1,64 @@
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    firewalls:
+        oauth_authorize:
+            pattern:    ^/oauth/v2/auth
+            form_login:
+                provider: fos_userbundle
+                check_path: /oauth/v2/auth_login_check
+                login_path: /oauth/v2/auth_login
+            anonymous: true
+
+        oauth_token:
+            pattern:    ^/oauth/v2/token
+            security:   false
+
+        api:
+            pattern:    ^/api
+            fos_oauth:  true
+            stateless:  true
+
+        login:
+            pattern:  ^/login$
+            anonymous: true
+
+        admin:
+            pattern: .*
+            host: admin\.casechek\.com
+            form_login:
+                provider: fos_userbundle
+                check_path: fos_user_security_check
+                login_path: fos_user_security_login
+                default_target_path: mbates_admin_dashboard_index
+            logout:
+                path: fos_user_security_logout
+                target: fos_user_security_login
+            remember_me:
+                key:      "%secret%"
+                lifetime: 31536000 # 365 days in seconds
+                path:     /
+                domain:   ~
+
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/api, role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/secured, role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/oauth/v2/auth_login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/*, role: IS_AUTHENTICATED_ANONYMOUSLY }

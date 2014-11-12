@@ -1,0 +1,9 @@
+{
+    "lib": {
+        "www": {
+            "id": "com.mbates",
+            "version": "3.5.0",
+            "uri": "https://github.com/mbates/Example"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+    <parameters>
+        <parameter key="mbates_user.person.handler.class">Mbates\Bundle\UserBundle\Handler\PersonHandler</parameter>
+        <parameter key="mbates_user.person.class">Mbates\Bundle\UserBundle\Entity\Person</parameter>
+    </parameters>
+
+    <services>
+        <service id="mbates_user.person.handler" class="%mbates_user.person.handler.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%mbates_user.person.class%</argument>
+            <argument type="service" id="form.factory"></argument>
+        </service>
+        <service id="mbates_user.registration.form.type" class="Mbates\Bundle\UserBundle\Form\RegistrationFormType">
+            <tag name="form.type" alias="mbates_user_registration" />
+        </service>
+        <service id="mbates.security.authentication.userprovider" class="Mbates\Bundle\UserBundle\Security\UserProvider">
+        	<argument type="service" id="fos_user.user_manager"/>
+        	<argument type="service" id="service_container"/>
+    	</service>
+    </services>
+
+</container>

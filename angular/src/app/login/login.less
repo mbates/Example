@@ -1,0 +1,81 @@
+.hero {
+	background-image: url(/assets/img/bg-hero.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
+	max-height: 18em;
+}
+
+.header {
+	overflow: hidden;
+	padding: 1.25rem 5%;
+	position: relative;
+	z-index: 2;
+}
+
+.logo {
+	position: absolute;
+	display: block;
+	height: 2.5rem;
+	margin: 4em 1em 1em;
+	width: auto;
+}
+
+.using-casechek {
+	position: relative;
+	bottom: 0;
+	right: 0;
+	width: 95%;
+	margin-left: 5%;
+	text-align: right;
+	z-index: 1;
+}
+
+.doctor {
+	position: relative;
+	vertical-align: middle;
+	max-width: 50%;
+	height: auto;
+	max-height: 100%;
+	margin-top: 2em;
+}
+
+.phone-notification {
+	background: #fff;
+	border: 1px solid #eee;
+	bottom: 22%;
+	font-size: .75em;
+	padding: .75em .75em .5em .5em;
+	position: absolute;
+	left: -2%;
+	text-align: center;
+	z-index: 1;
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-animation: iphone-notification .4s; /* Safari 4+ */
+	-moz-animation: iphone-notification .4s; /* Fx 5+ */
+	-o-animation: iphone-notification .4s; /* Opera 12+ */
+	animation: iphone-notification .4s;
+}
+
+.phone-notification img {
+	margin-right: .25em;
+	margin-top: -.25em;
+	padding: .5em .375em .425em .5em;
+	vertical-align: middle;
+	width: 1.5em;
+	-webkit-border-radius: .25em;
+	-moz-border-radius: .25em;
+	border-radius: .25em;
+}
+
+.phone-notification:after {
+	bottom: -19px;
+	content: url(/assets/img/notification-arrow.png);
+	left: 20%;
+	margin-left: -12px;
+	position: absolute;
+}

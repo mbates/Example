@@ -1,0 +1,9 @@
+client:
+    grant_type: password
+        get_id: php app/console mbates:oauth-server:client:create --redirect-uri="http://app.mbates.net" --grant-type="authorization_code" --grant-type="password" --grant-type="refresh_token" --grant-type="token" --grant-type="client_credentials"
+        public_id: 1_iixnj9osjfkk4ooo8sok0scswwcsswksgggg8gs8o8sw4wc04
+        secret: 3ltcpi36lrk0oc4040kgs00gkgsg8wcoo8o4skcoso8oc0wssg
+        get_code: http://api.mbates.net/oauth/v2/auth?client_id=1_iixnj9osjfkk4ooo8sok0scswwcsswksgggg8gs8o8sw4wc04&response_type=code&redirect_uri=http://app.mbates.net
+        get_token: http://api.mbates.net/oauth/v2/token?client_id=1_iixnj9osjfkk4ooo8sok0scswwcsswksgggg8gs8o8sw4wc04&client_secret=3ltcpi36lrk0oc4040kgs00gkgsg8wcoo8o4skcoso8oc0wssg&grant_type=client_credentials
+        get_token_code: http://api.mbates.net/oauth/v2/token?client_id=1_iixnj9osjfkk4ooo8sok0scswwcsswksgggg8gs8o8sw4wc04&client_secret=3ltcpi36lrk0oc4040kgs00gkgsg8wcoo8o4skcoso8oc0wssg&grant_type=authorization_code&redirect_uri=http://app.mbates.net&code=
+        usr_pwd: http://api.mbates.net/oauth/v2/token?client_id=1_iixnj9osjfkk4ooo8sok0scswwcsswksgggg8gs8o8sw4wc04&client_secret=3ltcpi36lrk0oc4040kgs00gkgsg8wcoo8o4skcoso8oc0wssg&grant_type=password&username="mike bates"&password=secret

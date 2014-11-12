@@ -1,0 +1,20 @@
+{
+  "name": "Mike Bates Example",
+  "version": "0.1.0",
+  "homepage": "https://github.com/incompass/API",
+  "authors": [
+    "Mike Bates <mbates@opskwan.com>"
+  ],
+  "description": "API, Kiosk and Admin for CaseChek",
+  "main": "?",
+  "license": "SAAS",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

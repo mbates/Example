@@ -1,0 +1,5 @@
+mbates_api_games:
+    type: rest
+    prefix: /
+    resource: Mbates\Bundle\ApiBundle\Controller\GamesController
+    name_prefix:  api_1_

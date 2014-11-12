@@ -1,0 +1,37 @@
+#ngbp
+*.sw*
+*~
+angular/build/
+angular/www/
+angular/bin/
+angular/node_modules/
+angular/vendor/*
+!angular/vendor/placeholders
+
+# Phonegap
+angular/platforms/*
+angular/plugins/*
+
+# Bootstrap
+symfony/app/bootstrap*
+
+# Symfony directories
+symfony/app/Resources/public/vendor/*
+symfony/vendor/*
+symfony/*/logs/*
+symfony/*/cache/*
+symfony/web/uploads/*
+symfony/web/bundles/*
+symfony/web/js
+symfony/web/css
+symfony/web/fonts
+symfony/web/img
+symfony/build/*
+symfony/bin/*
+
+# Assetic
+symfony/web/assets
+
+# Configuration files
+symfony/app/config/parameters.ini
+symfony/app/config/parameters.yml

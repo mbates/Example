@@ -1,0 +1,22 @@
+<header role="banner" class="hero">
+	<img src="assets/img/mb-logo.png" class="logo" alt="Example" />
+    <div class="using-casechek">
+        <img src="assets/img/gamer.png" class="doctor" />
+    </div>
+</header>
+
+<form class="form-login" role="form">
+	<div class="form-group">
+		<label class="form-login-heading">Login</label>
+		<input type="text" class="form-control" placeholder="Username" data-ng-model="loginData.username" required autofocus>
+	</div>
+	<div class="form-group">
+		<input type="password" class="form-control" placeholder="Password" data-ng-model="loginData.password" required>
+	</div>
+	<div data-ng-hide="message == ''" class="alert alert-danger">
+		{{message}}
+	</div>
+	<div class="form-group">
+		<button class="btn btn-lg btn-info btn-block" type="submit" data-ng-click="login()">Login</button>
+	</div>
+</form>

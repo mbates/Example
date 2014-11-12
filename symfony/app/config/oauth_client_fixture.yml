@@ -1,0 +1,5 @@
+id: 1
+random_id: iixnj9osjfkk4ooo8sok0scswwcsswksgggg8gs8o8sw4wc04
+redirect_uris: a:1:{i:0;s:21:"http://app.mbates.net";}
+secret: 3ltcpi36lrk0oc4040kgs00gkgsg8wcoo8o4skcoso8oc0wssg
+allowed_grant_types: a:5:{i:0;s:18:"authorization_code";i:1;s:8:"password";i:2;s:13:"refresh_token";i:3;s:5:"token";i:4;s:18:"client_credentials";}

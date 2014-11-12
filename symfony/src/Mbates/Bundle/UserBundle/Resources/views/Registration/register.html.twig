@@ -1,0 +1,44 @@
+{% extends 'MbatesAdminBundle::layout.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+<div class="row login">
+
+    <div class="col-sm-6 col-sm-offset-4 col-md-4 col-md-offset-4">
+        
+        <div class="register-panel">
+
+            <form action="{{ path("fos_user_registration_register") }}" method="post" class="fos_user_registration_register" autocomplete="off">
+            
+                {{ form_widget(form) }}
+
+                <button class="btn btn-lg btn-primary btn-block">{{ 'registration.submit'|trans }}</button>
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock fos_user_content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#fos_user_registration_form_vendor').change(function(){
+                if( $('#fos_user_registration_form_vendor').val() != '' ) {
+                    $('#fos_user_registration_form_hospital').val(null);
+                }
+            });
+            $('#fos_user_registration_form_hospital').change(function(){
+                if( $('#fos_user_registration_form_hospital').val() != '' ) {
+                    $('#fos_user_registration_form_vendor').val(null);
+                }
+            });
+        });
+    </script> 
+{% endblock %}

@@ -1,0 +1,39 @@
+<nav class="nav-bar">
+    <div class="table">
+        <div class="label">
+            <a ng-click="$back()" class="back"><span class="glyphicon glyphicon-chevron-left"></span> Back</a>
+        </div>
+        <div>
+            <h1 class="st-title">Game Details</h1>
+        </div>
+        <div class="label">
+            <a href="#game/{{gameDetails.id}}/edit"><span class="glyphicon glyphicon-pencil"></span> Edit Game</a>
+        </div>
+    </div>
+</nav>
+
+<div x-container id="details" class="row" ui-view="details">
+
+    <ul class="table">
+        <li>
+            <div class="info top">
+                <h2>Title</h2>{{gameDetails.title}}<br />
+                <h2>Notes</h2>{{gameDetails.notes}}
+            </div>
+        </li>
+    </ul>
+
+    <button class="btn btn-lg btn-info btn-block" ng-click="takePhoto()">Take Photo</button>
+
+    <div>
+        <ul class="tray-photos clearfix">
+            <li ng-if="gameImage != ''" class="photo">
+                <img class="img-responsive" src="{{baseString}},{{gameImage}}" />
+            </li>
+            <li ng-if="gameImage == '' && gameDetails.image != ''" class="photo">
+                <img class="img-responsive" src="{{baseString}},{{gameDetails.image}}" />
+            </li>
+        </ul>
+    </div>
+
+</div>

@@ -1,0 +1,42 @@
+<nav class="nav-bar">
+    <div class="table">
+        <div class="label">
+            <a ng-click="$back()" class="back"><span class="glyphicon glyphicon-chevron-left"></span> Back</a>
+        </div>
+        <div>
+            <h1 class="st-title">Confirm Details</h1>
+        </div>
+        <div class="label"></div>
+    </div>
+</nav>
+
+<div x-container id="confirm" class="row" ui-view="add">
+
+    <section>
+
+        <ul class="table">
+            <li>
+                <div class="info top">
+                    <h2>Title</h2>
+                    {{gameData.title}}
+                </div>
+            </li>
+            <li>
+                <div class="info top">
+                    <h2>Notes</h2>
+                    {{gameData.notes}}
+                </div>
+            </li>
+        </ul>
+        <div class="form-submit">
+            <div class="two">
+                <button class="btn btn-lg btn-block btn-blue" ng-click="$back()">Cancel</button>
+            </div>
+            <div class="two">
+                <button class="btn btn-lg btn-block" ng-click="postGame()">Save</button>
+            </div>
+        </div>
+        
+    </section>
+
+</div>

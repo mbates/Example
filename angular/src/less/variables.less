@@ -1,0 +1,35 @@
+// ----- Twitter Bootstrap -----
+@import "../../vendor/bootstrap/less/variables.less";
+
+@grid-float-breakpoint: 300px;
+
+/**
+ * Typography-related.
+ */
+
+@sansFontFamily: 'Roboto', sans-serif;
+
+/**
+ * Colours
+ */
+@mbatesBlue: #03a6ff;
+@backgroundGrey: #f0f7fb;
+@textBlack: #212121;
+@darkBlue: #323E46;
+@toolbar: #266082;
+
+/**
+ * Mix-ins
+ */
+
+.border-radius(@radius) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.box-sizing(@sizing) {
+	-webkit-box-sizing: @sizing;
+    -moz-box-sizing: @sizing;
+    box-sizing: @sizing;
+}

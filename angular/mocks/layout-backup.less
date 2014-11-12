@@ -1,0 +1,329 @@
+/* NAVIGATION BAR */
+.navbar {
+    background: @mbatesBlue;
+    min-height: 42px;
+    padding-top: 0.5em;
+}
+
+.nav-tabs {
+    border-bottom: none;
+    > li {
+        display:inline;
+        margin-left:1em;
+        > a {
+            color: #fff;
+            padding-left:0.75em;
+            padding-right:0.75em;
+            &:hover {
+                color: @mbatesBlue;
+            }
+        }
+
+        &.active > a {
+            &,
+            &:hover,
+            &:focus {
+                color: @mbatesBlue;
+                background-color: @backgroundGrey;
+            }
+        }
+    }
+}
+
+.nav-tools {
+    overflow: hidden;
+    > li {
+        display: inline;
+        float: left;
+        margin-left: .75em;
+        > a {
+            font-size: 0.875em;
+            padding-left: 0.75em;
+            padding-right: 0.75em;
+            &:hover {
+                background:none;
+            }
+        }
+    }
+    img {
+        width: 19px;
+        height: auto;
+    }
+}
+
+/* TAB BAR */
+.tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f9f9f9;
+    background: rgba(249,249,249,.96);
+    border-top: 1px solid #b2b2b2;
+    border-color: rgba(178,178,178,.8);
+    z-index: 99;
+    li {
+        display: block;
+        float: left;
+        list-style: none;
+        text-align: center;
+        position: relative;
+        width: 20%;
+        font-size: .75em;
+        a {
+            background-size: 25px 100px;
+            background-position: center 6px;
+            background-repeat: no-repeat;
+            color: #929292;
+            font-weight: 500;
+            display: block;
+            padding-top: 36px;
+            &:hover,
+            &:hover,
+            &:focus {
+                color: @mbatesBlue;
+                background-position: center -69px;
+                text-decoration: none;
+            }
+        }
+        &.tb-active > a {
+            &,
+            &:hover,
+            &:focus {
+                color: @mbatesBlue;
+                background-position: center -69px;
+            }
+        }
+    }
+    #tb-schedule {
+        a {
+            background-image: url('/assets/img/tb-schedule.png');
+        }
+    }
+    #tb-notifications {
+        a {
+            background-image: url('/assets/img/tb-notifications.png');
+        }
+    }
+    #tb-scan {
+        a {
+            background-image: url('/assets/img/tb-scan.png');
+            background-size: 30px 100px;
+        }
+    }
+    #tb-contacts {
+        a {
+            background-image: url('/assets/img/tb-contacts.png');
+        }
+    }
+    #tb-more {
+        a {
+            background-image: url('/assets/img/tb-more.png');
+        }
+    }
+    .notification-badge {
+        position: absolute;
+        top: -.75em;
+        left: 50%;
+        margin-left: 1em;
+        background: #FF0000;
+        padding: .325em .75em;
+        color: #fff;
+        -webkit-border-radius: 1em;
+        -moz-border-radius: 1em;
+        border-radius: 1em;
+        -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        -moz-box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    }
+}
+
+/* Table cells have a default vertical-align of middle, but there are instances when we want the content to align to the top of the cell, thus .top */
+.table {
+    width: 100%;
+    border-bottom: 1px solid #E3E3E3;
+    margin-top: 2em;
+    li {
+        background: #fff;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        display: table;
+        h2 {
+            padding: 0;
+        }
+        div {
+            display: table-cell;
+            vertical-align: middle;
+            border-top: 1px solid #E3E3E3;
+        }
+        .top {
+            vertical-align: top;
+            padding-top: .75em;
+            padding-bottom: .75em;
+        }
+    }
+    h2 {
+        padding: .25em 0 .25em 1em;
+    }
+    /* For displaying tray numbers, on the schedule and case details views */
+    .trays {
+        width: 2em;
+        span {
+            display: block;
+            padding: .25em 0;
+            -webkit-border-radius: 3em;
+            -moz-border-radius: 3em;
+            border-radius: 3em;
+            color: #000;
+            color: rgba(0,0,0,.9);
+        }
+    }
+    .info {
+        padding: .75em 0;
+    }
+    .info:first-child {
+        padding-left: .75em;
+    }
+}
+
+.table li:first-child,.table h2 + li,.table li + h2 {
+    border-top: 1px solid #E3E3E3;
+}
+.table li:first-child div,.table h2 + li div {
+    border: 0;
+}
+.table .left-col,.table .right-col {
+    width: 1.5em;
+    padding-left: .75em;
+    padding-right: .75em;
+    text-align: center;
+    font-size: .75em;
+    font-weight: 600;
+}
+.table .left-col,.table li:first-child div {
+    border-color: transparent;
+}
+
+/* For table cells with icons */
+
+.left-col {
+    img {
+        width: 24px;
+        height: auto;
+        vertical-align: middle;
+    }
+}
+
+.table {
+    .info {
+        padding: .75em 0;
+    }
+    .info:first-child {
+        padding-left: .75em;
+    }
+}
+
+/* Classes for tray statuses, both for tray table cells and the segmented controls in the schedule view. */
+.sterilized-for-surgery span,.segmented-control .sterilized-for-surgery:before {
+    background: #05FF76;
+}
+.inventory-on-site span,.segmented-control .inventory-on-site:before {
+    background: #F8DC6B;
+}
+.inventory-not-on-site span,.segmented-control .inventory-not-on-site:before {
+    background: #FF7777;
+}
+.ready-for-pick-up span,.segmented-control .ready-for-pick-up:before {
+    background: #5FCEF6;
+}
+
+/* NOT SURE */
+.content {
+    background: #F5F5F5;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 5em;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1;
+}
+
+/* BUTTON STYLES
+* Give a buttons a class of .btn. Add .blue to make the button background blue */
+
+.btn {
+    border: 1px solid #3b95ca;
+    padding: .75em !important;
+    text-align: center;
+    -webkit-border-radius: .25em;
+    -moz-border-radius: .25em;
+    border-radius: .25em;
+}
+.btn:hover,.btn:focus,.blue {
+    background: #3b95ca;
+    color: #fff;
+}
+.blue:hover,.blue:focus {
+    background: none;
+    color: #3b95ca;
+}
+
+/* NAVIGATION BAR */
+.tab-control {
+    li {
+        display: inline;
+        float: left;
+        margin-left: 1em;
+    }
+    a {
+        color: #fff;
+        -webkit-border-top-left-radius: 4px;
+        -webkit-border-top-right-radius: 4px;
+        -moz-border-radius-topleft: 4px;
+        -moz-border-radius-topright: 4px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+}
+
+.tools {
+    overflow: hidden;
+    li {
+        list-style: none;
+        display: inline;
+        float: left;
+        margin-left: .75em;
+    }
+    img {
+        width: 19px;
+        height: auto;
+    }
+}
+
+/* TOOLBAR
+* The toolbar goes in the .nav-bar, so it remains fixed to the top. */
+.toolbar {
+    background: #F1F8FB;
+    float: left;
+    width: 100%;
+    clear: both;
+    border-bottom: 1px solid #ccc;
+    border-color: rgba(0,0,0,.15);
+    li {
+        list-style: none;
+        margin: .5em 2.5%;
+        width: 46.25%;
+        a {
+            display: block !important;
+            height: auto;
+        }
+    }
+    li:first-child {
+        margin-right: 0;
+    }
+}

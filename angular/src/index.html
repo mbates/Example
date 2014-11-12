@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="example" ng-controller="AppCtrl">
+
+<head>
+	<title ng-bind="pageTitle"></title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="robots" content="index, follow" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+	<link rel="shortcut icon" href="" />
+
+	<!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+	<link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+	<!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+	<script type="text/javascript" src="<%= file %>"></script><% }); %>
+
+</head>
+
+<body>
+
+	<div ui-view></div>
+	
+</body>
+</html>

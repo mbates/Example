@@ -1,0 +1,155 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+	<head> 
+		<title>Case Details</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+		<meta name="robots" content="index, follow" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="" />
+		<link rel="shortcut icon" href="" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="alternate" href="" title="RSS Feed" />
+	</head>
+	<body>
+		<nav class="tab-bar" role="navigation">
+			<ul>
+				<li id="tb-schedule" class="tb-active">
+					<a href="#schedule">Schedule</a>
+				</li>
+				<li id="tb-notifications">
+					<a href="#notifications">
+						Notifications
+						<div class="notification-badge">3</div>
+					</a>
+				</li>
+				<li id="tb-scan">
+					<a href="#scan">Scan</a>
+				</li>
+				<li id="tb-contacts">
+					<a href="#contacts">Contacts</a>
+				</li>
+				<li id="tb-more">
+					<a href="#more">More</a>
+				</li>
+			</ul>
+		</nav>
+		<nav class="nav-bar" role="navigation">
+			<a href="#back" class="back left"><img src="images/ico-back.png" alt="Back" /> Back</a>
+			<ul class="left tab-control">
+				<li class="tc-active">
+					<a href="#details">Details</a>
+				</li>
+				<li>
+					<a href="#comments">Comments</a>
+				</li>
+			</ul>
+			<ul class="toolbar">
+				<li class="left">
+					<a href="#edit-case" class="btn">Edit Case</a>
+				</li>
+				<li class="right">
+					<a href="#print-labels" class="btn">Print Labels</a>
+				</li>
+			</ul>
+		</nav>
+		<section class="content">
+			<ul class="table">
+				<li>
+					<div class="left-col top">
+						<img src="images/ico-hospital.png" alt="Procedure" />
+					</div>
+					<div class="info top">
+						<h2>Procedure</h2>
+						<strong>Northwestern Memorial</strong><br />
+						Dr. James Lee<br />
+						Spinal Fusion &mdash; Xia<br />
+						Wed, Apr 16 12:30pm
+					</div>
+				</li>
+				<li>
+					<div class="left-col top">
+						<img src="images/ico-vendor.png" alt="Vendor" />
+					</div>
+					<div class="info top">
+						<h2>Vendor</h2>
+						<strong>Stryker</strong><br />
+						Amy Blatt<br />
+						<a tel="1-555-555-5555">1-226-555-1234</a><br />
+						<a href="mailto:amy.blatt@stryker.com">amy.blatt@stryker.com</a>
+					</div>
+				</li>
+				<li>
+					<div class="left-col">
+						<img src="images/ico-clock.png" alt="Delivery Schedule" />
+					</div>
+					<div class="info">
+						<h2>Tray Delivery Date</h2>
+						Mon, Apr 14
+					</div>
+					<div class="info">
+						<h2>Tray Pick-up Date</h2>
+						Mon, Apr 17
+					</div>
+				</li>
+			</ul>
+			<ul class="table">
+				<li class="sterilized">
+					<div class="left-col trays">
+						<span>8</span>
+					</div>
+					<div class="info">
+						<h2>Tray Status</h2>
+						Sterilized for Surgery
+					</div>
+				</li>
+				<li>
+					<div class="left-col">
+						<img src="images/trays.jpg" alt="Tray Photos" />
+					</div>
+					<div class="info">
+						Tray Photos
+					</div>
+				</li>
+				<li>
+					<div class="left-col">
+						<img src="images/ico-sterilization.png" alt="Sterilization Instructions" />
+					</div>
+					<div class="info">
+						Sterilization Instructions
+					</div>
+				</li>
+			</ul>
+			<ul class="table">
+				<li>
+					<div class="left-col">
+						<img src="images/ico-duplicate.png" alt="Duplicate Case" />
+					</div>
+					<div class="info">
+						Duplicate Case
+					</div>
+				</li>
+				<li>
+					<div class="left-col">
+						<img src="images/ico-close-case.png" alt="Close Case" />
+					</div>
+					<div class="info">
+						Close Case
+					</div>
+				</li>
+				<li>
+					<div class="left-col">
+						<img src="images/ico-delete-case.png" alt="Delete Case" />
+					</div>
+					<div class="info">
+						Delete Case
+					</div>
+				</li>
+			</ul>
+		</section>
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="js/init.js"></script>
+		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	</body>
+</html>

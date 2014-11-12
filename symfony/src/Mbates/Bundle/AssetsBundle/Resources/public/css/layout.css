@@ -1,0 +1,321 @@
+html {
+	font-size: 1em;
+}
+
+body {
+	color: #212128;
+    font: 1em/1.5 "Avenir Next", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+    -webkit-font-smoothing: antialiased;
+	padding-top: 50px;
+}
+
+/**
+ * Navbar
+ */
+
+ .navbar-default {
+ 	background: #f5f5f5;
+ 	margin: 0;
+ }
+
+.navbar-brand {
+	display: block;
+	float: none;
+	height: 40px;
+	margin: .5em 0;
+	padding: 0;
+}
+
+.navbar-brand img {
+	height: 100%;
+	width: auto;
+	margin-left: .5em;
+	margin-right: .5em;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	background-color: #dfeffc;
+}
+
+.navbar-default .navbar-nav li.report-problem span.glyphicon {
+	padding-right: 5px;
+}
+
+/**
+ * Navbar Footer
+ */
+
+.navbar-fixed-bottom {
+	background: #00283e;
+	border:none;
+	text-align: right;
+}
+.navbar-fixed-bottom .navbar-brand {
+	color: #ffffff;
+}
+.navbar-fixed-bottom .navbar-brand:hover, .navbar-fixed-bottom .navbar-brand:focus {
+	color: #ffffff;
+}
+.navbar-fixed-bottom .navbar-text {
+	color: #ffffff;
+}
+.navbar-fixed-bottom .copyright {
+	margin-top: 2.25em;
+	font-size: 0.60em;
+	color: #f1f1f1;
+}
+.navbar-fixed-bottom .navbar-nav {
+ 	display: inline-block;
+	float: none;
+	vertical-align: top;
+}
+.navbar-fixed-bottom .navbar-center {
+	text-align: center;
+}
+.navbar-fixed-bottom .navbar-nav > li > a {
+	color: #ffffff;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.navbar-fixed-bottom .navbar-nav > li > a:hover, .navbar-fixed-bottom .navbar-nav > li > a:focus {
+	color: #ffffff;
+	background-color: #0072ad;
+}
+.navbar-fixed-bottom .navbar-nav > .active > a, .navbar-fixed-bottom .navbar-nav > .active > a:hover, .navbar-fixed-bottom .navbar-nav > .active > a:focus {
+	color: #ffffff;
+	background-color: #0072ad;
+}
+.navbar-fixed-bottom .navbar-nav > .open > a, .navbar-fixed-bottom .navbar-nav > .open > a:hover, .navbar-fixed-bottom .navbar-nav > .open > a:focus {
+	color: #ffffff;
+	background-color: #0072ad;
+}
+.navbar-fixed-bottom .navbar-toggle {
+	border-color: #0072ad;
+}
+.navbar-fixed-bottom .navbar-toggle:hover, .navbar-fixed-bottom .navbar-toggle:focus {
+	background-color: #0072ad;
+}
+.navbar-fixed-bottom .navbar-toggle .icon-bar {
+	background-color: #ffffff;
+}
+.navbar-fixed-bottom .navbar-collapse,
+.navbar-fixed-bottom .navbar-form {
+	border-color: #ffffff;
+}
+.navbar-fixed-bottom .navbar-link {
+	color: #ffffff;
+}
+.navbar-fixed-bottom .navbar-link:hover {
+	color: #ffffff;
+}
+
+.footer-logo {
+	margin: 10px auto;
+	height: 37px;
+	float: left;
+}
+
+/**
+ * Login Screen
+ */
+
+.login-panel {
+	text-align: center;
+}
+
+.login-panel .logo {
+	margin-bottom: 2em;
+	height: 60px;
+	width: auto;
+}
+
+@media (max-width: 767px) {
+	.navbar-fixed-bottom .navbar-nav .open .dropdown-menu > li > a {
+		color: #ffffff;
+	}
+	.navbar-fixed-bottom .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-fixed-bottom .navbar-nav .open .dropdown-menu > li > a:focus {
+		color: #ffffff;
+	}
+	.navbar-fixed-bottom .navbar-nav .open .dropdown-menu > .active > a, .navbar-fixed-bottom .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-fixed-bottom .navbar-nav .open .dropdown-menu > .active > a:focus {
+		color: #ffffff;
+		background-color: #0072ad;
+	}
+}
+
+/**
+ * Left Menu
+ */
+
+nav.main-menu {
+	position: fixed;
+	top: 59px;
+	bottom: 0;
+	margin-bottom: 50px;
+	left: 0;
+	width: 60px;
+	overflow: hidden;
+	-webkit-transition: width .05s linear;
+	transition: width .05s linear;
+	-webkit-transform: translateZ(0) scale(1,1);
+	background: #f5f5f5;
+	z-index: 1010;
+}
+
+nav.main-menu ul {
+	padding:0;
+}
+
+nav.main-menu>ul {
+	margin: 7px 0;
+}
+
+nav.main-menu>ul.bottom {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+nav.main-menu li {
+	position: relative;
+	display: block;
+	width: 250px;
+}
+
+nav.main-menu li>a {
+	position: relative;
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 0;
+	text-decoration: none;
+	color: #999;
+	-webkit-transform: translateZ(0) scale(1,1);
+	-webkit-transition: all .1s linear;
+	transition: all .1s linear;
+}
+
+nav.main-menu li ul {
+	position: absolute;
+	display: inline-block;
+	background: #222;
+	top: 0;
+	right: -210px;
+	width: 0;
+	overflow: hidden;
+	-webkit-transition: width 0s .05s linear;
+	transition: width 0s .05s linear;
+}
+
+nav.main-menu li li {
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 210px;
+}
+
+nav.main-menu li li>a {
+	width: 210px;
+	height: 36px;
+	color: #999;
+}
+
+nav.main-menu li li .subnav-text {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 20px;
+	padding-right: 40px;
+}
+
+nav.main-menu li li:hover a {
+	color: #fff;
+	background-color: #5fa2db;
+}
+
+nav.main-menu li.has-subnav .nav-text {
+	width: 170px;
+}
+
+nav.main-menu li:hover>a,nav.main-menu li.active>a {
+	color: #fff;
+	background-color: #5fa2db;
+}
+
+nav.main-menu li:hover ul,nav.main-menu li.active ul {
+	width: 210px;
+}
+
+nav.main-menu .nav-icon {
+	position: relative;
+	display: table-cell;
+	width: 60px;
+	height: 36px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 18px;
+}
+
+nav.main-menu .nav-icon.icon-home {
+	font-size: 20px;
+}
+
+nav.main-menu .nav-text {
+	position: relative;
+	left: -1px;
+	padding-top: 5px;
+	display: table-cell;
+	vertical-align: middle;
+	width: 190px;
+	visibility: hidden;
+}
+
+nav.main-menu .icon-angle-right {
+	display: table-cell;
+	width: 20px;
+	vertical-align: middle;
+	font-size: 16px;
+}
+
+nav.main-menu:hover,nav.main-menu.expanded {
+	width: 250px;
+	overflow: visible;
+}
+
+nav.main-menu:hover .nav-text,nav.main-menu.expanded .nav-text {
+	visibility: visible;
+}
+
+nav.main-menu .label-new {
+	display: block;
+	position: absolute;
+	top: 10px;
+	right: 5px;
+}
+
+nav.main-menu .label-new.label-warning {
+	color: #555;
+}
+
+/**
+ * Wrapper
+ */
+
+.main-menu + #wrapper {
+	margin:8px 0 57px 60px;
+}
+
+#wrapper .row {
+	margin: 0;
+}
+
+#content {
+	background: #fff;
+	margin: 0 50px;
+	padding:10px 20px 50px 20px;
+}
+
+#content .page-header {
+	margin: 0 0 10px 0;
+}
+
+#content .page-header h1{
+	margin: 0;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}CaseChek{% endblock %}</title>
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        {% block stylesheets %}
+            <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+            <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+            {% stylesheets output='assets/compiled/casecheck.css' filter='cssrewrite'
+                'bundles/mbatesassets/css/layout.css'
+                'bundles/mbatesassets/css/mbates.css'
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+
+<body>
+
+    {% block navbar %}{% endblock %}
+
+    {% block mainmenu %}{% endblock %}
+
+    <section id="wrapper">{% block body %}{% endblock %}</section>
+
+    <div class="navbar navbar-default navbar-fixed-bottom">
+
+        <div class="container-fluid">
+            <img src="/img/example-logo-footer.png" alt="Mbates Example" class="footer-logo" />
+        </div>
+
+    </div>
+
+    {% block javascripts %}
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        {% javascripts output='assets/compiled/casechek.js'
+            'bundles/mbatesassets/js/modernizr-2.6.2.js'
+            'bundles/mbatesassets/js/mbates.js'
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+
+</body>
+</html>

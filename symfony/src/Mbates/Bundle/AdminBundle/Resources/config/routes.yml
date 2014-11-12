@@ -1,0 +1,4 @@
+mbates_admin_dashboard:
+    type: annotation
+    prefix: /
+    resource: Mbates\Bundle\AdminBundle\Controller\DashboardController

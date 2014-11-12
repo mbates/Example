@@ -1,0 +1,25 @@
+#offline-warning-message {
+    display:none;
+}
+
+.page-header h1 {
+    float: left;
+}
+
+.page-header .btn {
+    float:left;
+    margin-left:10px;
+    padding:10px;
+}
+
+.form-group {
+    padding: 0 10px 10px 0;
+}
+
+.row-link {
+    cursor: pointer;
+}
+
+label {
+    font-weight: normal;
+}

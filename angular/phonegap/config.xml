@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.mbates.example" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+
+    <name>Mike Bates</name>
+    
+    <description>
+        Exmaple App demonstrating Symfony2 -> AngularJS -> Pheongap.
+    </description>
+    
+    <author email="info@mbates.net" href="http://app.mbates.net">
+        Mike Bates
+    </author>
+
+    <preference name="phonegap-version" value="3.5.0" />
+    <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="true" />
+    <<preference name="webviewbounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="7" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+
+    <gap:plugin name="org.apache.cordova.camera" version="0.2.9" />
+
+    <icon src="icon.png" />
+    <icon gap:platform="android" gap:qualifier="ldpi" src="assets/img/logo/android/drawable-ldpi/ic_launcher.png" />
+    <icon gap:platform="android" gap:qualifier="mdpi" src="assets/img/logo/android/drawable-mdpi/ic_launcher.png" />
+    <icon gap:platform="android" gap:qualifier="hdpi" src="assets/img/logo/android/drawable-hdpi/ic_launcher.png" />
+    <icon gap:platform="android" gap:qualifier="xhdpi" src="assets/img/logo/android/drawable-xhdpi/ic_launcher.png" />
+    <icon gap:platform="android" gap:qualifier="xhdpi" src="assets/img/logo/android/drawable-xhdpi/ic_launcher.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="assets/img/logo/android/drawable-ldpi/ic_launcher.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="assets/img/logo/android/drawable-mdpi/ic_launcher.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="assets/img/logo/android/drawable-hdpi/ic_launcher.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="assets/img/logo/android/drawable-xhdpi/ic_launcher.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-xxhdpi" src="assets/img/logo/android/drawable-xxhdpi/ic_launcher.png" />
+    <access origin="*" />
+</widget>

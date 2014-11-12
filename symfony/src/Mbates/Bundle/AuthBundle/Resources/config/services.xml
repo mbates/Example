@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="mbates.grant_type.api_key" class="Mbates\Bundle\AuthBundle\OAuth\ApiKeyGrantExtension">
+            <tag name="fos_oauth_server.grant_extension" uri="http://api.c.server/grants/api_key" />
+            <argument type="service" id="mbates.security.authentication.userprovider"/>
+        </service>
+    </services>
+
+</container>

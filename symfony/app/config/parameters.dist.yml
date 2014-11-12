@@ -1,0 +1,20 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: example
+    database_user: example
+    database_password: example
+    database_charset: UTF8
+
+    mailer_transport: sendmail
+    mailer_host: smtp.sendgrid.net
+    mailer_user: USERNAME
+    mailer_password: PASSWORD
+    mailer_port: 465
+    mailer_encryption: ssl
+
+    locale: en
+    secret: CHANGETHIS
+
+    database_path: null

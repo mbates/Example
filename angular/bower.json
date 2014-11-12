@@ -1,0 +1,28 @@
+{
+  "name": "ng-boilerplate",
+  "version": "0.3.2",
+  "devDependencies": {
+    "angular": "~1.3.0",
+    "angular-mocks": "~1.2",
+    "bootstrap": "~3.1",
+    "angular-strap": "latest",
+    "angular-animate": "1.3",
+    "angular-ui-router": "~0.2",
+    "angular-resource": "latest",
+    "angular-moment": "latest",
+    "angular-sanitize": "latest",
+    "restangular": "latest",
+    "angular-slugify": "latest",
+    "ngInfiniteScroll": "latest",
+    "angular-toastr": "latest"
+  },
+  "dependencies": {
+    "cordova": "latest",
+    "ngCordova": "latest"
+  },
+  "resolutions": {
+    "jquery": "~2.x",
+    "bootstrap": "^3.2.0",
+    "angular": "~1.3.0"
+  }
+}

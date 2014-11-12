@@ -1,0 +1,168 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+
+framework:
+    #esi:             ~
+    translator:      { fallback: %locale% }
+    secret:          %secret%
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: %kernel.debug%
+    form:            ~
+    csrf_protection: true
+    validation:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+        #assets_version: SomeVersionScheme
+    default_locale:  "%locale%"
+    trusted_proxies: ~
+    session:         ~
+    fragments:       ~
+
+# Twig Configuration
+twig:
+    debug:            %kernel.debug%
+    strict_variables: %kernel.debug%
+    exception_controller: 'FOS\RestBundle\Controller\ExceptionController::showAction'
+    form:
+        resources: ['bootstrap_3_layout.html.twig']
+
+# Assetic Configuration
+assetic:
+    debug:          %kernel.debug%
+    use_controller: false
+    bundles:        ['MbatesAssetsBundle','MbatesAdminBundle','FOSUserBundle','MbatesUserBundle']
+    filters:
+        cssrewrite: ~
+
+braincrafted_bootstrap:
+    auto_configure:
+        assetic: false
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        connections:
+            default:
+                driver:   %database_driver%
+                host:     %database_host%
+                port:     %database_port%
+                dbname:   %database_name%
+                user:     %database_user%
+                password: %database_password%
+                charset:  %database_charset%
+
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+        entity_managers:
+            default:
+                connection: default
+                mappings:
+                    MbatesAuthBundle: ~
+                    MbatesUserBundle: ~
+                    MbatesFixtureBundle:  ~
+                    MbatesApiBundle: ~
+                    MbatesGameBundle:  ~
+                    FOSOAuthServerBundle: ~
+                dql:
+                    datetime_functions:
+                        date: Mapado\MysqlDoctrineFunctions\DQL\MysqlDate
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport:      %mailer_transport%
+    host:           %mailer_host%
+    username:       %mailer_user%
+    password:       %mailer_password%
+    spool:          { type: memory }
+    port:           %mailer_port%
+    encryption:     %mailer_encryption%
+    sender_address: %mailer_sender_address%
+
+sensio_framework_extra:
+    view: { annotations: false }
+
+# FriendsOfSymfony : Rest
+fos_rest:
+    disable_csrf_role: ROLE_API
+    param_fetcher_listener: true
+    view:
+        view_response_listener: 'force'
+        formats:
+            xml:  true
+            json: true
+        templating_formats:
+            html: true
+        jsonp_handler: ~
+    format_listener:
+        rules:
+            - { path: '^/api', priorities: [ html, jsonp, json, xml ], fallback_format: ~, prefer_extension: true }
+            - { path: '^/', stop: true }
+    exception:
+        codes:
+            'Symfony\Component\Routing\Exception\ResourceNotFoundException': 404
+            'Doctrine\ORM\OptimisticLockException': HTTP_CONFLICT
+        messages:
+            'Symfony\Component\Routing\Exception\ResourceNotFoundException': true
+    allowed_methods_listener: true
+    access_denied_listener:
+        json: true
+    body_listener: true
+
+# FriendsOfSymfony : User
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: Mbates\Bundle\UserBundle\Entity\Person
+    group:
+        group_class: Mbates\Bundle\UserBundle\Entity\Group
+    registration:
+        form:
+            type: mbates_user_registration
+
+# FriendsOfSymfony : OAuth
+fos_oauth_server:
+    db_driver: orm
+    client_class: Mbates\Bundle\AuthBundle\Entity\Client
+    access_token_class: Mbates\Bundle\AuthBundle\Entity\AccessToken
+    refresh_token_class: Mbates\Bundle\AuthBundle\Entity\RefreshToken
+    auth_code_class: Mbates\Bundle\AuthBundle\Entity\AuthCode
+    service:
+        user_provider: fos_user.user_provider.username
+        options:
+            supported_scopes: user
+            access_token_lifetime: 14400
+
+nelmio_api_doc: ~
+
+nelmio_cors:
+    paths:
+        '^/api/':
+            allow_credentials: true
+            allow_origin: ['*']
+            allow_headers: ['X-Requested-With','Content-Type','Authorization','Origin','Accept']
+            allow_methods: ['POST','PUT','PATCH','GET','DELETE','OPTIONS']
+            max_age: 3600
+
+liip_cache_control:
+    flash_message_listener: true
+    authorization_listener: false
+    rules:
+        # the controls section values are used in a call to Response::setCache();
+        - { path: ^/notes, method: [GET, HEAD], controls: { public: true, max_age: 15, s_maxage: 30, last_modified: "-1 hour" }, vary: [Accept-Encoding, Accept-Language] }
+
+bazinga_hateoas: ~
+
+bazinga_rest_extra: ~
+
+knp_paginator:
+    page_range: 5                      # default page range used in pagination control
+    default_options:
+        page_name: page                # page query parameter name
+        sort_field_name: sort          # sort field query parameter name
+        sort_direction_name: direction # sort direction query parameter name
+        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        pagination: MbatesAssetsBundle:Common:paginator-bootstrap.html.twig
+        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
