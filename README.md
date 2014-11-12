@@ -1,7 +1,8 @@
 ## Example Symfony2 / AngularJS Apps
 
 ### Install Symfony
-Globally install composer https://getcomposer.org/doc/00-intro.md then run this from the symfony directory
+- Copy symfony/app/config/parameters.dist.yml to symfony/app/config/parameters.yml and update the details in the file.
+- Globally install composer https://getcomposer.org/doc/00-intro.md then run this from the symfony directory
 
 ```
 composer install
