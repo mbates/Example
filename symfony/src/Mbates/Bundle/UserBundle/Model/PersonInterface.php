@@ -26,9 +26,6 @@ interface PersonInterface
      */
     public function setUpdated($updated);
 
-    /**
-     * @ORM\PreUpdate
-     */
     public function setUpdatedValue();
 
     /**
