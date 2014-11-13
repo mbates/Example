@@ -22,20 +22,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="{{ path('mbates_web_default_index') }}" class="navbar-brand"><img src="/img/casechek-header-logo.png" />Administration</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                {% if app.user %}
-                <ul class="nav navbar-nav navbar-left">
-                    {% if is_granted('ROLE_USER') %}
-                    <li><a href="{{ path('mbates_admin_games_index')}}">{% trans %}Nav Link 1{% endtrans %}</a></li>
-                    <li><a href="{{ path('mbates_admin_games_index')}}">{% trans %}Nav Link 2{% endtrans %}</a></li>
-                    {% endif %}
-                </ul>
-                {% endif %}
-
+                <a href="{{ path('mbates_admin_dashboard_index') }}" class="navbar-brand"><img src="/img/header-logo.png" />Login</a>
             </div>
 
         </div>
@@ -66,13 +53,11 @@
                     {% endif %}
 
                     {% if is_granted('ROLE_ADMIN') %}
-                    <li><a class="subnav-text" href="{{ path('mbates_admin_games_index')}}">{% trans %}Admin Link 1{% endtrans %}</a></li>
-                    <li><a class="subnav-text" href="{{ path('mbates_admin_games_index')}}">{% trans %}Admin Link 2{% endtrans %}</a></li>
+                    <li><a class="subnav-text" href="{{ path('mbates_admin_dashboard_index')}}">{% trans %}Admin Link{% endtrans %}</a></li>
                     {% endif %}
 
                     {% if is_granted('ROLE_USER') %}
-                    <li><a class="subnav-text" href="{{ path('mbates_admin_games_index')}}">{% trans %}User Link 1{% endtrans %}</a></li>
-                    <li><a class="subnav-text" href="{{ path('mbates_admin_games_index')}}">{% trans %}User Link 2{% endtrans %}</a></li>
+                    <li><a class="subnav-text" href="{{ path('mbates_admin_dashboard_index')}}">{% trans %}User Link{% endtrans %}</a></li>
                     {% endif %}
                 </ul>
 
@@ -87,7 +72,7 @@
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <li>
                 
-                <a href="{{ path('mbates_admin_games_index')}}">
+                <a href="{{ path('mbates_admin_dashboard_index')}}">
                     <span class="glyphicon glyphicon-user nav-icon"></span>
                     <span class="nav-text">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</span>
                 </a>
@@ -95,14 +80,14 @@
             <li>
                 <a href="{{ path('fos_user_security_logout')}}">
                     <span class="glyphicon glyphicon-off nav-icon"></span>
-                    <span class="nav-text" href="{{ path('mbates_admin_games_index')}}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
+                    <span class="nav-text" href="{{ path('mbates_admin_dashboard_index')}}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
                 </a>
             </li>
             {% else %}
             <li>
                 <a href="{{ path('fos_user_security_login')}}">
                     <span class="glyphicon glyphicon-off nav-icon"></span>
-                    <span class="nav-text" href="{{ path('mbates_admin_games_index')}}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                    <span class="nav-text" href="{{ path('mbates_admin_dashboard_index')}}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
                 </a>
             </li>
             {% endif %}
