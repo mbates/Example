@@ -34,7 +34,7 @@ security:
 
         admin:
             pattern: .*
-            host: admin\.casechek\.com
+            host: admin\.mbates\.net
             form_login:
                 provider: fos_userbundle
                 check_path: fos_user_security_check
