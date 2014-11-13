@@ -13,7 +13,7 @@ class PersonRepository extends EntityRepository
      *
      * Call this with knp_pagination
      */
-    public function findAll()
+    public function findAllPaginator()
     {
         return $this->createQueryBuilder("person");
     }
