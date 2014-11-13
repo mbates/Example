@@ -1,17 +1,17 @@
-incompass_admin:
-    host:     admin.casechek.com
+mbates_admin:
+    host:     admin.mbates.net
     resource: "@MbatesAdminBundle/Resources/config/routes.yml"
 
-incompass_api:
+mbates_api:
     resource: "@MbatesApiBundle/Resources/config/routes.yml"
     type:     rest
     prefix:   /api
 
-incompass_oauth_server_auth_login:
+mbates_oauth_server_auth_login:
     pattern:  /oauth/v2/auth_login
     defaults: { _controller:MbatesAuthBundle:Security:login }
 
-incompass_oauth_server_auth_login_check:
+mbates_oauth_server_auth_login_check:
     pattern:  /oauth/v2/auth_login_check
     defaults: { _controller: MbatesAuthBundle:Security:loginCheck }
 
