@@ -2,3 +2,8 @@ mbates_admin_dashboard:
     type: annotation
     prefix: /
     resource: Mbates\Bundle\AdminBundle\Controller\DashboardController
+
+mbates_admin_people:
+    type: annotation
+    prefix: /people
+    resource: Mbates\Bundle\AdminBundle\Controller\PeopleController
