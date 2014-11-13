@@ -1,19 +1,24 @@
 <?php
-
 namespace Mbates\Bundle\AdminBundle\Controller;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class DashboardController extends Controller
 {
-    /**
-     * @Route("/hello/{name}")
+	/**
+     * @Route("/")
      * @Template()
      */
-    public function indexAction($name)
+    public function indexAction(Request $request)
     {
-        return array('name' => $name);
+    	$page = array( 'title' => 'Dashboard' );
+
+    	 return compact('page');
     }
 }

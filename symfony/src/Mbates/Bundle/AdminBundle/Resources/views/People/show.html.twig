@@ -1,0 +1,67 @@
+{% extends 'MbatesAdminBundle::layout.html.twig' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block body %}
+
+<section class="page-header clearfix col-md-12">
+
+    <h1>{{page.title}}</h1>
+
+    <div class="btn-group pull-right">
+        <a href="{{ path('person_index')}}" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span> {% trans %}Back{% endtrans %}</a>
+        <a href="{{ path('person_edit', { 'id': person.id }) }}" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> {% trans %}Edit{% endtrans %}</a>
+    </div>
+
+</section>
+
+<section class="col-md-12">
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ person.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ person.title }}</td>
+            </tr>
+            <tr>
+                <th>Given_name</th>
+                <td>{{ person.givenname }}</td>
+            </tr>
+            <tr>
+                <th>Family_name</th>
+                <td>{{ person.familyname }}</td>
+            </tr>
+            <tr>
+                <th>Api_key</th>
+                <td>{{ person.apikey }}</td>
+            </tr>
+            <tr>
+                <th>Phone_office</th>
+                <td>{{ person.phoneoffice }}</td>
+            </tr>
+            <tr>
+                <th>Phone_mobile</th>
+                <td>{{ person.phonemobile }}</td>
+            </tr>
+            <tr>
+                <th>Phone_fax</th>
+                <td>{{ person.phonefax }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{{ person.created|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Updated</th>
+                <td>{{ person.updated|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>
+
+{% endblock %}

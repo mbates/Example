@@ -1,0 +1,71 @@
+{% extends 'MbatesAdminBundle::layout.html.twig' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block body %}
+
+<section class="page-header clearfix col-md-12">
+
+    <h1>{{page.title}}</h1>
+
+    <div class="btn-group pull-right">
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+        <a href="{{ path('fos_user_registration_register')}}" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> {% trans %}Register User{% endtrans %}</a>
+        {% endif %}
+    </div>
+
+</section>
+
+<section class="col-md-12">
+
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+
+             <fieldset>
+
+                <legend>{% trans %}Filters{% endtrans %}</legend>
+
+                <div class="form-group pull-right"><button type="submit" class="btn btn-primary">{% trans %}Set Filters{% endtrans %}</button></div>
+
+            </fieldset>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="col-md-12">
+
+    <table class="table table-striped table-hover">
+
+        <thead>
+            <tr>
+                <th{% if pagination.isSorted('person.familyName') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Family Name', 'person.familyName') }}</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for person in pagination %}
+            <tr>
+                <td><strong>{{ person.familyName }}</strong> {{ person.givenName }}</td> 
+                <td>{{ person.email }}</td>
+                <td>
+                    <a href="{{ path('person_edit', { 'id': person.id }) }}"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="{{ path('person_show', { 'id': person.id }) }}"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    
+    <div class="pagination">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+    
+</section>    
+{% endblock %}

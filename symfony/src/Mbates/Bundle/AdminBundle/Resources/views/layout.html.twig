@@ -1,0 +1,110 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets output='assets/compiled/admin.css' filter='cssrewrite'
+        'bundles/mbatesassets/css/admin.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block navbar %}
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="{{ path('mbates_admin_dashboard_index') }}" class="navbar-brand"><img src="/img/header-logo.png" />Administration</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+{% endblock %}
+
+{% block mainmenu %}
+
+    <nav class="main-menu">
+
+        <ul>
+
+            {% if app.user %}
+            
+            <li class="has-subnav">
+
+                <a href="javascript:;">
+                    <span class="glyphicon glyphicon-cog nav-icon"></span>
+                    <span class="nav-text">{% trans %}Managers{% endtrans %}</span>
+                    <span class="glyphicon glyphicon-chevron-right nav-icon"></span>
+                </a>
+
+                <ul>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <li><a class="subnav-text" href="{{ path('person_index')}}">{% trans %}People{% endtrans %}</a></li>
+                    {% endif %}
+
+                    {% if is_granted('ROLE_USER') %}
+                    <li><a class="subnav-text" href="{{ path('mbates_admin_dashboard_index')}}">{% trans %}User Link 1{% endtrans %}</a></li>
+                    {% endif %}
+                </ul>
+
+            </li>
+
+            {% endif %}
+
+        </ul>
+
+        <ul class="bottom">
+
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <li>
+                
+                <a href="{{ path('person_show', { 'id': app.user.id }) }}">
+                    <span class="glyphicon glyphicon-user nav-icon"></span>
+                    <span class="nav-text">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('fos_user_security_logout')}}">
+                    <span class="glyphicon glyphicon-off nav-icon"></span>
+                    <span class="nav-text" href="{{ path('mbates_admin_dashboard_index')}}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
+                </a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{{ path('fos_user_security_login')}}">
+                    <span class="glyphicon glyphicon-off nav-icon"></span>
+                    <span class="nav-text" href="{{ path('mbates_admin_dashboard_index')}}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                </a>
+            </li>
+            {% endif %}
+
+        </ul>
+
+    </nav>
+
+{% endblock %}
+
+{% block body %}
+    {% for type, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="flash-{{ type }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <div>
+        {% block fos_user_content %}
+        {% endblock fos_user_content %}
+    </div>
+{% endblock body%}

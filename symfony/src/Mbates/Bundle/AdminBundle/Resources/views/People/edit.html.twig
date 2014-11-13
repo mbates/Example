@@ -1,0 +1,23 @@
+{% extends 'MbatesAdminBundle::layout.html.twig' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+
+{% block body %}
+
+<section class="page-header clearfix col-md-12">
+
+    <h1>{{page.title}}</h1>
+
+    <div class="btn-group pull-right">
+        <a href="{{ path('person_index')}}" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span> {% trans %}List{% endtrans %}</a>
+        <a href="{{ path('person_show', { 'id': person.id }) }}" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> {% trans %}View{% endtrans %}</a>
+    </div>
+
+</section>
+
+<section class="col-md-12">
+    {{ form(edit_form) }}
+</section>
+
+{% endblock %}
