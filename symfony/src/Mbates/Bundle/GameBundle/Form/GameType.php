@@ -16,6 +16,7 @@ class GameType extends AbstractType
 	{
 		$builder->add( 'id', 'hidden', array( 'mapped' => false ) ) 
 				->add( 'title', 'text' )
+				->add( 'image', 'text' )
 				->add( 'notes', 'text', array( 'required' => false ) );
 	}
 	
