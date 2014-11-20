@@ -22,7 +22,7 @@
             </div>
         </li>
     </ul>
-    
+
     <div>
         <ul class="tray-photos">
             <li ng-if="gameDetails.image != ''" class="photo">
@@ -31,6 +31,6 @@
         </ul>
     </div>
 
-    <button class="btn btn-lg btn-info btn-block" ng-ig="phoneGap" ng-click="takePhoto()">Take Photo</button>
+    <button class="btn btn-lg btn-info btn-block" ng-if="phoneGap" ng-click="takePhoto()">Take Photo</button>
 
 </div>
