@@ -46,7 +46,7 @@ angular.module('example.game', [])
         });
 })
 
-.controller('GameDetailsCtrl', function GameDetailsCtrl( $scope, $rootScope, $stateParams, $state, $cordovaCamera, GameServices, GameDetails ) {
+.controller('GameDetailsCtrl', function GameDetailsCtrl( $scope, $rootScope, $stateParams, $state, $cordovaCamera, toastr, GameServices, GameDetails ) {
     $scope.baseString = 'data:image/jpeg;base64';
 
     GameServices.get({'gameId':$stateParams.gameId,'accessToken':$rootScope.accessToken})
@@ -128,7 +128,7 @@ angular.module('example.game', [])
     };
 })
 
-.controller('GameEditCtrl', function GameEditCtrl( $scope, $rootScope, $stateParams, $location, GameServices, GameDetails, GameData ) {
+.controller('GameEditCtrl', function GameEditCtrl( $scope, $rootScope, $stateParams, $location, toastr, GameServices, GameDetails, GameData ) {
     // Game Details
     $scope.gameDetails = GameDetails.getGameDetails();
 
