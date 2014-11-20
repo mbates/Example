@@ -26,6 +26,7 @@
     <button class="btn btn-lg btn-info btn-block" ng-click="takePhoto()">Take Photo</button>
 
     <div>
+        [--{{gameImage}}--]
         <ul class="tray-photos clearfix">
             <li ng-if="gameImage != ''" class="photo">
                 <img class="img-responsive" src="{{baseString}},{{gameImage}}" />

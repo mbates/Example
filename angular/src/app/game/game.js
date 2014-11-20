@@ -89,7 +89,7 @@ angular.module('example.game', [])
                     });
                 },
                 function(error){
-                    $log.error(error);
+                    toastr.error(error);
                 }
             );
         }, function(error) {
