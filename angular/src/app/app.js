@@ -25,6 +25,13 @@ angular.module( 'example', [
     $rootScope.loginRedirect = '/game/index';
     $rootScope.showNav = false;
 
+    // Phonegap or browser
+    if (typeof(cordova) === 'undefined') {
+        $rootScope.phoneGap = false;
+    } else {
+        $rootScope.phoneGap = true;
+    }
+
     dt = new Date();
     $rootScope.timezoneOffset = dt.getTimezoneOffset();
 
