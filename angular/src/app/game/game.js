@@ -47,7 +47,6 @@ angular.module('example.game', [])
 })
 
 .controller('GameDetailsCtrl', function GameDetailsCtrl( $scope, $rootScope, $stateParams, $state, $cordovaCamera, GameServices, GameDetails ) {
-    $scope.gameImage = '';
     $scope.baseString = 'data:image/jpeg;base64';
 
     GameServices.get({'gameId':$stateParams.gameId,'accessToken':$rootScope.accessToken})
@@ -71,7 +70,7 @@ angular.module('example.game', [])
         };
 
         $cordovaCamera.getPicture(options).then(function(imageData) {
-            $scope.gameImage = imageData;
+            $scope.gameDetails.image = imageData;
 
             // Send Image to Server
             var game = {};
@@ -93,7 +92,7 @@ angular.module('example.game', [])
                 }
             );
         }, function(error) {
-            $scope.error += error;
+            toastr.error(error);
         });
     };
 })
